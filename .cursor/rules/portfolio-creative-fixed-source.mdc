@@ -1,0 +1,19 @@
+---
+description: Portfolio mode - fixed creative source template
+alwaysApply: true
+---
+
+# Portfolio Creative Source (Fixed)
+
+Use this rule when the user wants creative studio direction.
+
+Source of truth:
+- `portfolio-template-creative-studio.md`
+
+Requirements:
+1. Always read `portfolio-template-creative-studio.md` before generating output.
+2. Keep the same ASCII template structure.
+3. Write all output in English only.
+4. Prioritize visual storytelling, interaction quality, and project showcase.
+5. Keep personal information secondary to strengths, projects, and technical execution.
+6. Do not switch to enterprise source unless the user explicitly asks to disable this mode.

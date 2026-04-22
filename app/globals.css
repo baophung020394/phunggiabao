@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 62% 7%;
+  --foreground: 210 20% 96%;
+  --card: 225 45% 11%;
+  --card-foreground: 210 20% 96%;
+  --primary: 188 100% 50%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 258 80% 56%;
+  --secondary-foreground: 210 20% 96%;
+  --muted: 224 24% 19%;
+  --muted-foreground: 215 20% 70%;
+  --accent: 146 84% 56%;
+  --accent-foreground: 222 47% 11%;
+  --border: 218 30% 24%;
+}
+
+.light {
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --primary: 220 100% 40%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 266 85% 60%;
+  --secondary-foreground: 210 20% 98%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 36%;
+  --accent: 160 84% 34%;
+  --accent-foreground: 210 20% 98%;
+  --border: 214 32% 90%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  background-image: linear-gradient(130deg, rgba(0, 255, 255, 0.1) 0%, rgba(120, 80, 255, 0.13) 35%, rgba(0, 255, 140, 0.08) 65%, transparent 100%),
+    radial-gradient(circle at 15% 10%, rgba(0, 242, 255, 0.16) 0%, transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(123, 0, 255, 0.2) 0%, transparent 30%);
+}
+
+/* Minimal scanline effect for cyber style atmosphere. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 48%, rgba(255, 255, 255, 0.03) 50%, transparent 52%);
+  background-size: 100% 3px;
+  mix-blend-mode: soft-light;
+  opacity: 0.35;
+}

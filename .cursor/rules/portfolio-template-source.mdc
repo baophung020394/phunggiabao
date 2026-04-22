@@ -1,0 +1,19 @@
+---
+description: Always use portfolio template source file
+alwaysApply: true
+---
+
+# Portfolio Template Source of Truth
+
+Before generating any portfolio design-system output, read exactly one selected source file:
+
+- Default source file: `portfolio-template-enterprise-b2b.md`
+- Alternative source file: `portfolio-template-creative-studio.md`
+
+Rules:
+1. Always read the selected source file first.
+2. Keep the same ASCII template structure in outputs.
+3. Write all output in English only.
+4. Adapt content to user request but preserve the style logic from source.
+5. If user says "creative", switch source to `portfolio-template-creative-studio.md`.
+6. If user says "enterprise" or "B2B", use `portfolio-template-enterprise-b2b.md`.

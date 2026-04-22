@@ -1,0 +1,190 @@
+% =============================
+% Developer CV - Overleaf Template (Correct Syntax)
+% Based on provided sample style
+% =============================
+
+\documentclass[letterpaper,10pt]{article}
+
+% -------- Packages --------
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+
+% -------- Header & Footer --------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% -------- Margins --------
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1in}
+
+% -------- Section Formatting --------
+\titleformat{\section}
+  {\vspace{-6pt}\scshape\raggedright\large\bfseries}
+  {}{0em}{}[\vspace{-6pt}]
+
+% -------- Custom Commands --------
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \textbf{#1} \hfill \textit{#2} \\
+  {#3} \hfill {#4}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1\vspace{-2pt}}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+% =============================
+\begin{document}
+
+% -------- Header --------
+\begin{center}
+  {\Huge \scshape PHUNG GIA BAO} \\
+  \vspace{2pt}
+  Ho Chi Minh City, Viet Nam \\
+  \href{mailto:email@gmail.com}{bao.future94@gmail.com} $|$ +84-79-2339-607 $|$
+  \href{https://linkedin.com/in/username}{linkedin.com/in/phunggiabao} $|$
+  \href{https://github.com/baophung020394}{github.com/baophung020394}
+\end{center}
+\begin{center}
+  \href{https://google.com.vn}{Portfolio}
+\end{center}
+
+% -------- Education --------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Huflit University}{Ho Chi Minh City, Viet Nam}
+    {Bachelor of Information Technology}{2012 -- 2016}
+\resumeSubHeadingListEnd
+
+% -------- Technical Skills --------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \resumeItem{\textbf{Languages:} JavaScript, TypeScript}
+  \resumeItem{\textbf{Frontend:} React.js, Next.js, HTML, CSS, TailwindCSS, Microfrontends, Web3, Threejs, Blender, Figma}
+  \resumeItem{\textbf{Backend:} Node.js, NestJS, REST API, Microservices}
+  \resumeItem{\textbf{Database:} PostgreSQL, MongoDB, Redis}
+  \resumeItem{\textbf{Cloud:} EC2, RDS, Digital Ocean, Vercel, Render}
+\resumeSubHeadingListEnd
+
+% -------- Experience --------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Lumberworks Limited}{Ho Chi Minh City, Viet Nam}
+    {Senior Software Engineer}{2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Designed database schemas and a full-stack Next.js architecture for both frontend and backend using a microservices approach.}
+    \resumeItem{Built and optimized the system to ensure high performance, scalability, and reliability.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Rikkeisoft}{Ho Chi Minh City, Viet Nam}
+    {Senior Software Engineer}{2023 -- 2025}
+  \resumeItemListStart
+    \resumeItem{Implemented New Relic monitoring and Raspberry Pi 5 email alerts for the Offline Engine project, and developed a Node.js/Express.js synchronization feature to keep in-store data updated when cloud services were down for over one hour.}
+    \resumeItem{Created and executed test cases to support the QC team for the Offline Engine project and improve release reliability.}
+    \resumeItem{Contributed to the Master Data Management System by fixing React.js bugs and building Figma-based UX/UI features, while coordinating daily reports/meetings/issue tracking with the India team and supporting merge requests plus conflict resolution between internal and client (7-Eleven) GitLab repositories.}
+  \resumeItemListEnd
+  
+  \resumeSubheading
+    {WAVE ASEAN}{Ho Chi Minh City, Viet Nam}
+    {Senior Software Engineer}{2021 -- 2023}
+  \resumeItemListStart
+  \resumeItem{Built projects from scratch using React.js and successfully delivered 2 projects for employee and user information management for the Moa Group Chat system, including channel, group, and 1:1 chat functionalities.}
+  \resumeItem{Maintained and developed additional small tasks for the Java Spring Boot 3 project, and successfully delivered the video call feature for the IRROM project from Korea.}
+  \resumeItem{Participated in discussions, development, and successful delivery of the Angular 9 project for weekly breakfast and lunch orders for company staff at Korea.}
+  \resumeItem{Involved in fixing UI bugs for web and mobile, and developing additional features for the company's big data security project.}
+  \resumeItem{Discussed and ideated with designers about UX/UI to make appropriate adjustments for the projects.}
+  \resumeItem{Established the Scrum model for the team, managed and assigned tasks, and provided training for team members.}
+  \resumeItem{Reported all work to the CEO and CTO daily.}
+  \resumeItem{Tech stack: React.js, Java Spring Boot 3}
+  \resumeItemListEnd
+ 
+  \resumeSubheading
+    {One Mount Consumer}{Ho Chi Minh City, Viet Nam}
+    {Senior Software Engineer}{2019 -- 2021}
+  \resumeItemListStart
+  \resumeItem{Successfully delivered the Q\&A game event project for the VinID e-wallet based on React.js.}
+  \resumeItem{Responsible for converting UI from Figma and discussing adjustments with the design team to ensure UX/UI alignment.}
+  \resumeItem{Participated in fixing UI bugs on iOS and Android devices.}
+  \resumeItem{Tech stack: React.js, Nodejs, Firebase}
+  \resumeItemListEnd
+  
+  \resumeSubheading
+    {SmartOSC}{Ho Chi Minh City, Viet Nam}
+    {Junior Developer}{2017 -- 2019}
+  \resumeItemListStart
+  \resumeItem{Responsible for slicing interfaces from Figma, Zeplin, and Adobe XD files for the company's e-commerce projects on CMS platforms such as Sitecore and Magento 2.}
+  \resumeItem{Fixed UI and responsive bugs.}
+  \resumeItem{Tech stack: HTML, CSS, JavaScript, Sitecore, Magento 2}
+  \resumeItemListEnd
+  
+  \resumeSubheading
+    {Apollo English}{Ho Chi Minh City, Viet Nam}
+    {Web Developer}{2015 -- 2017}
+  \resumeItemListStart
+  \resumeItem{Participated in and developed the UI for the company's SugarCRM system using PHP.}
+  \resumeItem{Responsible for training the company's admin, sales, and teaching staff on the SugarCRM system.}
+  \resumeItem{Managed data import and supervised interns during the data import/export process for the system transition from C\# to SugarCRM.}
+  \resumeItem{Tech stack: PHP, SugarCRM}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% -------- Projects --------
+\section{Projects Highlights}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Prediction Market}{Lumberworks Limited}
+    {Tech Stack: React, Nextjs, Node.js, Drizzle ORM, PostgreSQL}{2025}
+  \resumeItemListStart
+  \resumeItem{Developed a Prediction Market project built on Web3/Blockchain technology.}
+  \resumeItem{Enabled users to register and access their accounts using either crypto wallets or Gmail-based authentication, then participate in market predictions directly on the platform.}
+  \resumeItem{Tech stack: Next.js, Node.js, Drizzle ORM, PostgreSQL, S3, DigitalOcean, Web3/Blockchain.}
+  \resumeItemListEnd
+  
+  \resumeSubheading
+    {7-Eleven Offline Engine}{Rikkeisoft}
+    {Tech Stack: React, Node.js, PostgreSQL, MongoDB, Redis, Docker, IoT MQTT, S3}{2023}
+  \resumeItemListStart
+  \resumeItem{Developed features for the Offline Engine system to apply discount codes for 7-Eleven stores during internet outages, and synchronized discount-code updates back to the cloud once connectivity was restored based on the Node.js, MongoDB, IoT MQTT, and S3 codebase in Hawaii, USA.}
+  \resumeItem{Participated in the Master Data Management System project by troubleshooting and fixing issues in a React.js codebase while collaborating with the 7-Eleven USA India team.}
+  \resumeItemListEnd
+  
+  \resumeSubheading
+    {7-Eleven Master Data Management System}{Rikkeisoft}
+    {Tech Stack: React, Node.js, PostgreSQL, MongoDB, Redis, Docker, IoT MQTT, S3}{2023}
+  \resumeItemListStart
+  \resumeItem{The project management all things about store of 7-11}
+  \resumeItemListEnd
+  
+  \resumeSubheading
+    {7-Eleven Master Data Management System}{Rikkeisoft}
+    {Tech Stack: React, Node.js, PostgreSQL, MongoDB, Redis, Docker, IoT MQTT, S3}{2023}
+  \resumeItemListStart
+  \resumeItem{The project management all things about store of 7-11}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% -------- Languages --------
+\section{Languages}
+\resumeSubHeadingListStart
+  \resumeItem{English: Professional working proficiency}
+\resumeSubHeadingListEnd
+
+\end{document}

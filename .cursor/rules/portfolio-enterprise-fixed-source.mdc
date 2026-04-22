@@ -1,0 +1,19 @@
+---
+description: Portfolio mode - fixed enterprise source template
+alwaysApply: false
+---
+
+# Portfolio Enterprise Source (Fixed)
+
+Use this rule when the user wants enterprise/B2B positioning.
+
+Source of truth:
+- `portfolio-template-enterprise-b2b.md`
+
+Requirements:
+1. Always read `portfolio-template-enterprise-b2b.md` before generating output.
+2. Keep the same ASCII template structure.
+3. Write all output in English only.
+4. Prioritize trust, clarity, technical depth, and measurable project impact.
+5. Keep personal information secondary to strengths, projects, and engineering outcomes.
+6. Do not switch to creative source unless the user explicitly asks to disable this mode.
