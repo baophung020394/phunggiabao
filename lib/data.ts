@@ -1,11 +1,11 @@
 export type TechCategory = "All" | "Frontend" | "Backend" | "Database" | "DevOps" | "Web3";
 
 export const techStack: Record<Exclude<TechCategory, "All">, string[]> = {
-  Frontend: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix UI", "Framer Motion"],
-  Backend: ["Node.js", "NestJS", "REST APIs", "Microservices", "React Query"],
+  Frontend: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix UI", "Framer Motion", "React Query"],
+  Backend: ["Node.js", "NestJS", "REST APIs", "Microservices"],
   Database: ["PostgreSQL", "MongoDB", "Redis", "Drizzle ORM"],
-  DevOps: ["Docker", "CI/CD", "Vercel", "New Relic"],
-  Web3: ["EVM Wallet Auth", "Smart Contract Integrations", "On-chain Data Visualization"],
+  DevOps: ["Docker", "CI/CD", "Vercel", "New Relic", "EC2", "RDS", "Digital Ocean", "S3"],
+  Web3: ["EVM Wallet Auth", "Smart Contract Integrations", "On-chain Data Visualization", "Privy"],
 };
 
 export const categories: TechCategory[] = ["All", "Frontend", "Backend", "Database", "DevOps", "Web3"];
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     description: "Built a scalable Web3 prediction platform with wallet and Gmail auth, fast settlement flows, and real-time market updates.",
     stack: ["Next.js", "Node.js", "Drizzle ORM", "PostgreSQL", "Web3", "Docker"],
     category: ["Frontend", "Backend", "Database", "DevOps", "Web3"],
-    demoUrl: "#",
+    demoUrl: "https://xmarket.app",
     githubUrl: "#",
   },
   {
