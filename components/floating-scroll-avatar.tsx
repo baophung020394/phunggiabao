@@ -72,6 +72,20 @@ export function FloatingScrollAvatar() {
     return Math.min(1, Math.max(0, ratio));
   }, [scrollY]);
 
+  useEffect(() => {
+    const element = document.getElementById(HERO_AVATAR_ID);
+    if (!element) return;
+
+    const sourceOpacity = Math.max(0, 1 - progress * 1.15);
+    element.style.opacity = `${sourceOpacity}`;
+    element.style.pointerEvents = sourceOpacity < 0.05 ? "none" : "auto";
+
+    return () => {
+      element.style.opacity = "1";
+      element.style.pointerEvents = "auto";
+    };
+  }, [progress]);
+
   const rightOffset = viewport.width >= 640 ? 24 : 16;
   const targetRect = useMemo<RectState>(
     () => ({
