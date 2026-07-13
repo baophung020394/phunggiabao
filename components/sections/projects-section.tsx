@@ -44,16 +44,15 @@ export function ProjectsSection() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {filtered.map((project, idx) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: idx * 0.08, duration: 0.35 }}
-            whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
-          >
-            <Card className="group h-full">
+        {filtered.map((project, idx) => {
+          const card = (
+            <Card
+              className={
+                project.featured
+                  ? "group h-full border-transparent bg-card shadow-none hover:border-transparent hover:shadow-none"
+                  : "group h-full"
+              }
+            >
               <h3 className="text-lg font-semibold">{project.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground">{project.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -72,8 +71,21 @@ export function ProjectsSection() {
                 </a>
               </div>
             </Card>
-          </motion.div>
-        ))}
+          );
+
+          return (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: idx * 0.08, duration: 0.35 }}
+              whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
+            >
+              {project.featured ? <div className="border-light h-full">{card}</div> : card}
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

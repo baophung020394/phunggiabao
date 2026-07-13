@@ -18,9 +18,21 @@ export type Project = {
   category: Exclude<TechCategory, "All">[];
   demoUrl: string;
   githubUrl: string;
+  featured?: boolean;
 };
 
 export const projects: Project[] = [
+  {
+    id: "tempelite",
+    title: "TempElite",
+    description:
+      "Led a 5-member team on a USA job marketplace connecting Facilities and Professionals, migrating MongoDB to PostgreSQL, redesigning tables, fixing bugs, and shipping notification features to production.",
+    stack: ["Next.js", "React.js", "Node.js", "MongoDB", "PostgreSQL"],
+    category: ["Frontend", "Backend", "Database"],
+    demoUrl: "https://tempelite.com",
+    githubUrl: "#",
+    featured: true,
+  },
   {
     id: "prediction-market",
     title: "Prediction Market",
