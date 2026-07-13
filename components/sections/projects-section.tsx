@@ -63,10 +63,10 @@ export function ProjectsSection() {
                 ))}
               </div>
               <div className="mt-6 flex gap-3">
-                <a className="inline-flex items-center gap-1 text-sm text-primary" href={project.demoUrl}>
+                <a className="inline-flex items-center gap-1 text-sm text-primary" href={project.demoUrl} target="_blank">
                   Live Demo <ExternalLink className="h-4 w-4" />
                 </a>
-                <a className="inline-flex items-center gap-1 text-sm text-primary" href={project.githubUrl}>
+                <a className="inline-flex items-center gap-1 text-sm text-primary" href={project.githubUrl} target="_blank" >
                   GitHub <Github className="h-4 w-4" />
                 </a>
               </div>
