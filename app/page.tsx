@@ -8,7 +8,6 @@ import { ExperienceSection } from "@/components/sections/experience-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useUiStore } from "@/lib/store/zustand-store";
-import { FloatingScrollAvatar } from "@/components/floating-scroll-avatar";
 
 export default function HomePage() {
   const isNoiseEnabled = useUiStore((state) => state.isNoiseEnabled);
@@ -16,13 +15,12 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden pb-8">
-      <FloatingScrollAvatar />
       {isNoiseEnabled && <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:3px_3px]" />}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="mx-auto max-w-7xl"
+        className="mx-auto max-w-[90rem]"
       >
         <header className="fixed left-0 right-0 top-0 z-40 border-b border-border/50 bg-background/70 backdrop-blur-xl">
           <div className="container flex h-16 items-center justify-between">

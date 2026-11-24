@@ -1,30 +1,29 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, TerminalSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProfileInfoGrid } from "@/components/profile-info-grid";
 
+const Avatar3DPortrait = dynamic(
+  () => import("@/components/avatar-3d-portrait").then((mod) => mod.Avatar3DPortrait),
+  { ssr: false },
+);
+
 function Avatar3DCard() {
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  const transform = useMemo(() => {
-    const rotateX = ((pointer.y - 50) / 50) * -10;
-    const rotateY = ((pointer.x - 50) / 50) * 10;
-    return `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  }, [pointer.x, pointer.y]);
 
   return (
     <motion.div
       initial={{ opacity: 0, x: 28 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="mx-auto w-full max-w-md"
+      className="mx-auto flex w-full max-w-md flex-col items-center"
     >
       <div
-        className="group relative overflow-hidden rounded-3xl border border-primary/40 bg-card/50 p-8 backdrop-blur-xl"
+        className="relative h-72 w-72 rounded-full border border-primary/50 bg-gradient-to-br from-cyan-400/25 via-violet-500/20 to-emerald-400/25 p-2 shadow-[0_0_40px_rgba(34,211,238,0.18)]"
         onMouseMove={(event) => {
           const rect = event.currentTarget.getBoundingClientRect();
           setPointer({
@@ -32,37 +31,20 @@ function Avatar3DCard() {
             y: ((event.clientY - rect.top) / rect.height) * 100,
           });
         }}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => {
-          setIsHovering(false);
-          setPointer({ x: 50, y: 50 });
-        }}
+        onMouseLeave={() => setPointer({ x: 50, y: 50 })}
       >
-        <motion.div
-          id="hero-avatar-orb"
-          className="relative mx-auto h-56 w-56 rounded-full border border-primary/50 bg-gradient-to-br from-cyan-400/25 via-violet-500/20 to-emerald-400/25 p-2"
-          style={{ transform }}
-          transition={{ type: "spring", stiffness: 140, damping: 15 }}
-        >
-          <div className="relative flex h-full w-full items-center justify-center rounded-full border border-white/10 bg-slate-900/70 shadow-[inset_0_0_60px_rgba(34,211,238,0.2)]">
-            <span className="text-6xl font-black tracking-wide text-cyan-300">PGB</span>
-            <div
-              className="pointer-events-none absolute inset-0 rounded-full"
-              style={{
-                background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.06) 18%, transparent 45%)`,
-              }}
-            />
-          </div>
-        </motion.div>
-        <div className="mt-6 text-center text-xs text-muted-foreground">Interactive Avatar - move cursor to control 3D tilt</div>
-        <motion.div
-          animate={{ opacity: isHovering ? 1 : 0.4 }}
-          className="pointer-events-none absolute -inset-px rounded-3xl"
-          style={{
-            background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgba(34,211,238,0.2), transparent 40%)`,
-          }}
-        />
+        <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-slate-950/80 shadow-[inset_0_0_60px_rgba(34,211,238,0.22)]">
+          <Avatar3DPortrait className="absolute inset-0" pointer={pointer} />
+          <div
+            className="pointer-events-none absolute inset-0 rounded-full"
+            style={{
+              background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.05) 16%, transparent 42%)`,
+            }}
+          />
+          <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-cyan-300/20" />
+        </div>
       </div>
+      <p className="mt-4 text-center text-xs text-muted-foreground">Interactive Avatar - move cursor to control 3D tilt</p>
     </motion.div>
   );
 }

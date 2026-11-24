@@ -26,7 +26,7 @@ export const projects: Project[] = [
     id: "tempelite",
     title: "TempElite",
     description:
-      "Led a 5-member team on a USA job marketplace connecting Facilities and Professionals, migrating MongoDB to PostgreSQL, redesigning tables, fixing bugs, and shipping notification features to production.",
+      "Lead a 5-member team on a USA job marketplace connecting Facilities and Professionals, migrating MongoDB to PostgreSQL, redesigning tables, fixing bugs, and shipping notification features to production.",
     stack: ["Next.js", "React.js", "Node.js", "MongoDB", "PostgreSQL"],
     category: ["Frontend", "Backend", "Database"],
     demoUrl: "https://tempelite.com",
@@ -143,11 +143,101 @@ export const projects: Project[] = [
   },
 ];
 
-export const experiences = [
-  { company: "Lumberworks Limited", role: "Senior Software Engineer", period: "2025 - Present" },
-  { company: "Rikkeisoft", role: "Senior Software Engineer", period: "2023 - 2025" },
-  { company: "WAVE ASEAN", role: "Senior Software Engineer", period: "2021 - 2023" },
-  { company: "One Mount Consumer", role: "Senior Software Engineer", period: "2019 - 2021" },
-  { company: "SmartOSC", role: "Junior Developer", period: "2017 - 2019" },
-  { company: "Apollo English", role: "Web Developer", period: "2015 - 2017" },
+export type ExperienceTheme =
+  | "blockchain"
+  | "japan-outsource"
+  | "korea-fintech"
+  | "ewallet"
+  | "vietnam-outsource"
+  | "english-center";
+
+export type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  tags: string[];
+  highlights: string[];
+  techStack?: string;
+  theme: ExperienceTheme;
+};
+
+export const experiences: Experience[] = [
+  {
+    company: "Lumberworks Limited",
+    role: "Senior Software Engineer",
+    period: "2025 - Present",
+    tags: ["#Web3", "#Blockchain"],
+    highlights: [
+      "Developed a Prediction Market project built on Web3/Blockchain technology.",
+      "Enabled users to register and access their accounts using either crypto wallets or Gmail-based authentication, then participate in market predictions directly on the platform.",
+    ],
+    techStack: "Next.js, Node.js, Drizzle ORM, PostgreSQL, S3, DigitalOcean, Web3/Blockchain",
+    theme: "blockchain",
+  },
+  {
+    company: "Rikkeisoft",
+    role: "Senior Software Engineer",
+    period: "2023 - 2025",
+    tags: ["#Japan", "#Outsourcing"],
+    highlights: [
+      "Developed features for the Offline Engine system to apply discount codes for 7-Eleven stores during internet outages, and synchronized discount-code updates back to the cloud once connectivity was restored based on the Node.js, MongoDB, IoT MQTT, and S3 codebase in Hawaii, USA.",
+      "Participated in the Master Data Management System project by troubleshooting and fixing issues in a React.js codebase while collaborating with the 7-Eleven USA India team.",
+    ],
+    theme: "japan-outsource",
+  },
+  {
+    company: "WAVE ASEAN",
+    role: "Senior Software Engineer",
+    period: "2021 - 2023",
+    tags: ["#Fintech", "#Korea"],
+    highlights: [
+      "Built projects from scratch using React.js and successfully delivered 2 projects for employee and user information management for the Moa Group Chat system, including channel, group, and 1:1 chat functionalities.",
+      "Maintained and developed additional small tasks for the Java Spring Boot 3 project, and successfully delivered the video call feature for the IRROM project from Korea.",
+      "Participated in discussions, development, and successful delivery of the Angular 9 project for weekly breakfast and lunch orders for company staff at Korea.",
+      "Involved in fixing UI bugs for web and mobile, and developing additional features for the company’s big data security project.",
+      "Discussed and ideated with designers about UX/UI to make appropriate adjustments for the projects.",
+      "Established the Scrum model for the team, managed and assigned tasks, and provided training for team members.",
+      "Reported all work to the CEO and CTO daily.",
+    ],
+    techStack: "React.js, Java Spring Boot 3",
+    theme: "korea-fintech",
+  },
+  {
+    company: "One Mount Consumer",
+    role: "Senior Software Engineer",
+    period: "2019 - 2021",
+    tags: ["#VinID", "#E-Wallet"],
+    highlights: [
+      "Successfully delivered the Q&A game event project for the VinID e-wallet based on React.js.",
+      "Responsible for converting UI from Figma and discussing adjustments with the design team to ensure UX/UI alignment.",
+      "Participated in fixing UI bugs on iOS and Android devices.",
+    ],
+    techStack: "React.js, Node.js, Firebase",
+    theme: "ewallet",
+  },
+  {
+    company: "SmartOSC",
+    role: "Junior Developer",
+    period: "2017 - 2019",
+    tags: ["#Vietnam", "#Outsourcing"],
+    highlights: [
+      "Responsible for slicing interfaces from Figma, Zeplin, and Adobe XD files for the company’s e-commerce projects on CMS platforms such as Sitecore and Magento 2.",
+      "Fixed UI and responsive bugs.",
+    ],
+    techStack: "HTML, CSS, JavaScript, Sitecore, Magento 2",
+    theme: "vietnam-outsource",
+  },
+  {
+    company: "Apollo English",
+    role: "Web Developer",
+    period: "2015 - 2017",
+    tags: ["#Education", "#English"],
+    highlights: [
+      "Participated in and developed the UI for the company’s SugarCRM system using PHP.",
+      "Responsible for training the company’s admin, sales, and teaching staff on the SugarCRM system.",
+      "Managed data import and supervised interns during the data import/export process for the system transition from C# to SugarCRM.",
+    ],
+    techStack: "PHP, SugarCRM",
+    theme: "english-center",
+  },
 ];
