@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, TerminalSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProfileInfoGrid } from "@/components/profile-info-grid";
+import { PlaygroundModal } from "@/components/playground/playground-modal";
 
 const Avatar3DPortrait = dynamic(
   () => import("@/components/avatar-3d-portrait").then((mod) => mod.Avatar3DPortrait),
@@ -14,38 +15,52 @@ const Avatar3DPortrait = dynamic(
 
 function Avatar3DCard() {
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
+  const [playgroundOpen, setPlaygroundOpen] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 28 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="mx-auto flex w-full max-w-md flex-col items-center"
-    >
-      <div
-        className="relative h-72 w-72 rounded-full border border-primary/50 bg-gradient-to-br from-cyan-400/25 via-violet-500/20 to-emerald-400/25 p-2 shadow-[0_0_40px_rgba(34,211,238,0.18)]"
-        onMouseMove={(event) => {
-          const rect = event.currentTarget.getBoundingClientRect();
-          setPointer({
-            x: ((event.clientX - rect.left) / rect.width) * 100,
-            y: ((event.clientY - rect.top) / rect.height) * 100,
-          });
-        }}
-        onMouseLeave={() => setPointer({ x: 50, y: 50 })}
+    <>
+      <motion.div
+        initial={{ opacity: 0, x: 28 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="mx-auto flex w-full max-w-md flex-col items-center"
       >
-        <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-slate-950/80 shadow-[inset_0_0_60px_rgba(34,211,238,0.22)]">
-          <Avatar3DPortrait className="absolute inset-0" pointer={pointer} />
-          <div
-            className="pointer-events-none absolute inset-0 rounded-full"
-            style={{
-              background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.05) 16%, transparent 42%)`,
-            }}
-          />
-          <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-cyan-300/20" />
-        </div>
-      </div>
-      <p className="mt-4 text-center text-xs text-muted-foreground">Interactive Avatar - move cursor to control 3D tilt</p>
-    </motion.div>
+        <button
+          type="button"
+          aria-label="Open Featured Projects 3D playground"
+          className="group relative h-72 w-72 cursor-pointer rounded-full border border-primary/50 bg-gradient-to-br from-cyan-400/25 via-violet-500/20 to-emerald-400/25 p-2 shadow-[0_0_40px_rgba(34,211,238,0.18)] transition hover:border-cyan-300/80 hover:shadow-[0_0_56px_rgba(34,211,238,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+          onClick={() => setPlaygroundOpen(true)}
+          onMouseMove={(event) => {
+            const rect = event.currentTarget.getBoundingClientRect();
+            setPointer({
+              x: ((event.clientX - rect.left) / rect.width) * 100,
+              y: ((event.clientY - rect.top) / rect.height) * 100,
+            });
+          }}
+          onMouseLeave={() => setPointer({ x: 50, y: 50 })}
+        >
+          <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-slate-950/80 shadow-[inset_0_0_60px_rgba(34,211,238,0.22)]">
+            <Avatar3DPortrait className="absolute inset-0" pointer={pointer} />
+            <div
+              className="pointer-events-none absolute inset-0 rounded-full"
+              style={{
+                background: `radial-gradient(circle at ${pointer.x}% ${pointer.y}%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.05) 16%, transparent 42%)`,
+              }}
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-cyan-300/20" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center">
+              <span className="rounded-full border border-cyan-300/40 bg-slate-950/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-cyan-100 opacity-0 transition group-hover:opacity-100">
+                Enter playground
+              </span>
+            </div>
+          </div>
+        </button>
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Interactive Avatar — click to drive Featured Projects town
+        </p>
+      </motion.div>
+      <PlaygroundModal open={playgroundOpen} onClose={() => setPlaygroundOpen(false)} />
+    </>
   );
 }
 
